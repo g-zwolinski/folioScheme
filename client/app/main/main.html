@@ -1,0 +1,286 @@
+<!--<header class="hero-unit" id="banner">
+  <div class="container">
+    <h1>'Allo, 'Allo!</h1>
+    <p class="lead">Kick-start your next web app with Angular Fullstack</p>
+    <img src="assets/images/yeoman.png" alt="I'm Yeoman">
+  </div>
+</header>
+
+<div class="container">
+  
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">Features:</h1>
+      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in $ctrl.awesomeThings">
+        <li><a href="#" uib-tooltip="{{thing.info}}">{{thing.name}}<button type="button" class="close" ng-click="$ctrl.deleteThing(thing)">&times;</button></a></li>
+      </ul>
+    </div>
+  </div>
+
+  <form class="thing-form">
+    <label>Syncs in realtime across clients</label>
+    <p class="input-group">
+      <input type="text" class="form-control" placeholder="Add a new thing here." ng-model="$ctrl.newThing">
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-primary" ng-click="$ctrl.addThing()">Add New</button>
+      </span>
+    </p>
+  </form>
+</div>
+-->   
+   <!--
+  <div  id="myPage">
+
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" type="button" ng-click="main.isCollapsed = !main.isCollapsed">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#myPage">Logo</a>
+        </div>
+        <div class="collapse navbar-collapse" uib-collapse="main.isCollapsed" >
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#about" du-smooth-scroll du-scrollspy>ABOUT</a></li>
+            <li><a href="#services" du-smooth-scroll du-scrollspy>SERVICES</a></li>
+            <li><a href="#portfolio" du-smooth-scroll du-scrollspy>PORTFOLIO</a></li>
+            <li><a href="#pricing" du-smooth-scroll du-scrollspy>PRICING</a></li>
+            <li><a href="#contact" du-smooth-scroll du-scrollspy>CONTACT</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="jumbotron text-center">
+      <h1>Company</h1>
+      <p>We specialize in blablabla</p>
+      <form class="form-inline">
+        <input type="email" class="form-control" size="50" placeholder="Email Address" required>
+        <button type="button" class="btn btn-danger">Subscribe</button>
+      </form>
+    </div>
+-->
+
+<!--
+  <nav>
+    <ul>
+      <li du-smooth-scroll="section-0" style="float: left"><a>Zwoliński</a></li>
+      <li><a href="#section-1" du-smooth-scroll du-scrollspy>about</a></li>
+      <li><a href="#section-2" du-smooth-scroll du-scrollspy>skills</a></li>
+      <li><a href="">cv</a></li>
+      <li><a du-smooth-scroll="section-3" du-scrollspy>works</a></li>
+      <li><a du-smooth-scroll="section-4" du-scrollspy>contact</a></li>
+    </ul>
+
+  </nav>
+  -->
+<div id="adminLink"><a href="/admin">admin</a></div>
+
+
+  <section id="section-0" class="page zero" ng-swipe-up="toSection('section-1');checkIfScrolled('section-1');" 
+  ng-swipe-down="toSection('section-0');checkIfScrolled('section-0');">
+    <div class="name navbar-brand fade animate-show" ng-show="!showMenu" ><h1>Grzegorz</h1></div>
+
+
+    <div class="hello fade animate-show jumbotron" ng-show="!showMenu&&data.cb5" align="center"><h1><big>witaj</big></h1><div class="whiteSpaceTopLeft">&nbsp;</div></div>
+  
+    <div class="hello fade animate-show jumbotron" ng-show="!showMenu&&!data.cb5" align="center"><h1><big>hello</big></h1><div class="whiteSpaceTopLeft">&nbsp;</div></div> 
+
+    
+    <md-switch class="md-primary" ng-model="data.cb5" style="position: absolute; top: 0; left: 0;padding: 10px 10px 10px 10px; opacity:0.5;">
+    {{(data.cb5?'PL':'ENG')}}
+  </md-switch>
+    <!--div class="cv navbar-brand fade animate-show">
+  
+    </div-->
+    <canvas id="canvas" resize  ng-style="resizeWithOffset(0)" ng-show="!showMenu" notifier="notifyServiceOnChange(params)"></canvas>
+
+  </section>
+
+
+  <section id="section-1"  class="page one">
+    <div 
+      style="margin-top: -{{showMenu?'0':'50'}}px; background-color: {{showMenu?'#f8f8f8':'rgba(0,0,0,0)'}};"
+      class="navbar navbar-default navbar-{{showMenu?'fixed':'static'}}-top" >
+      <div class="container" >
+        <div class="navbar-header">
+          <button class="navbar-toggle fade animate-show" type="button" du-smooth-scroll="section-1" ng-show="!showMenu" ng-click="$ctrl.isCollapsed = !$ctrl.isCollapsed;checkIfScrolled('section-1');" style="max-height:  35px !important; float:right; border: none;transition: all 1s;">
+            <i class="material-icons fade animate-show" ng-show="!showMenu"  style="max-height: 20px !important; opacity: 0.7; margin-bottom: 15px;">expand_more</i>
+          </button>
+          <button class="navbar-toggle fade animate-show" type="button" ng-show="showMenu" ng-click="$ctrl.isCollapsed = !$ctrl.isCollapsed" style="transition: all 1s;float:right; border: none;position:absolute;right: 0;">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" du-smooth-scroll="section-0" ng-click="scrollTarget=''";>Zwoliński</a>
+        </div>
+        <div uib-collapse="$ctrl.isCollapsed" class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav navbar-right row">
+            <li><md-button class="col-xs-12" du-smooth-scroll="section-1" du-scrollspy id="nav-section-1"
+              ng-click="checkIfScrolled('section-1');">about</md-button></li>
+            <li><md-button class="col-xs-12" du-smooth-scroll="section-2" du-scrollspy id="nav-section-2"
+              ng-click="checkIfScrolled('section-2');">skills</md-button></li>
+            <li><md-button class="col-xs-12" du-smooth-scroll="section-3" du-scrollspy id="nav-section-3"
+              ng-click="checkIfScrolled('section-3');">works</md-button></li>
+            <li><md-button class="col-xs-12" du-smooth-scroll="section-4" du-scrollspy id="nav-section-4"
+              ng-click="checkIfScrolled('section-4');">contact</md-button></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <h1 class="header" style="padding-top: {{(showMenu)?'100':'50'}}px;transition: all 1s;"   >
+      about</br><small>me in few words</small>
+    </h1>
+    <div class="container">
+    <div  class="gridListdemoDynamicTiles">
+      <md-grid-list md-cols="1" md-cols-sm="2" md-cols-md="3" md-cols-gt-md="6" md-row-height-gt-md="1:1" md-row-height="4:3" md-gutter="8px" md-gutter-gt-sm="4px">
+
+        <md-grid-tile md-rowspan="2" md-rowspan-lg="2" md-colspan="3" md-colspan-sm="1"  md-rowspan-sm="2"  md-rowspan-xs="2" md-colspan-xs="1" class="gray innerTile">
+        <p>Bacon ipsum dolor sit amet sausage tail capicola ground round hamburger ham hock. Short ribs pig andouille meatball, pastrami tri-tip fatback ham hock shank kielbasa swine. Rump pancetta jerky kielbasa doner beef ribs tongue hamburger strip steak drumstick andouille shoulder shank flank. Swine drumstick meatball pig beef sausage strip steak.
+        Bacon ipsum dolor sit amet sausage tail capicola ground round hamburger ham hock. Short ribs pig andouille meatball, pastrami tri-tip fatback ham hock shank kielbasa swine. Rump pancetta jerky kielbasa doner beef ribs tongue hamburger strip steak drumstick andouille shoulder shank flank.</p>
+          <md-grid-tile-footer><h3>short bio</h3></md-grid-tile-footer>
+        </md-grid-tile>
+        <md-grid-tile md-rowspan="2" md-colspan="2" md-colspan-sm="1" md-rowspan-sm="1" md-colspan-xs="1"  md-rowspan-xs="1"  class="gray innerTile">
+          <img src="assets/images/yeoman.png" alt="I'm Yeoman" height="100%" width="100%">
+          <md-grid-tile-footer align="center">
+            <md-button class="cvButton">CV</md-button>
+            <md-button class="cvButton">PDF</md-button>
+          </md-grid-tile-footer>
+            
+        </md-grid-tile>
+        <md-grid-tile md-rowspan="2" md-colspan="1" md-colspan-sm="1" md-rowspan-sm="1" md-rowspan-sm="1" md-colspan-xs="1"  md-rowspan-xs="1"  class="gray innerTile">
+        <p>Bacon ipsum dolor sit amet sausage tail capicola ground round hamburger ham hock. Short ribs pig andouille meatball, pastrami tri-tip fatback ham hock shank kielbasa swine. Rump pancetta jerky kielbasa doner beef ribs tongue hamburger strip steak drumstick andouille shoulder shank flank.</p>
+        </md-grid-tile>
+      </md-grid-list>
+    </div>
+    </div>
+    
+  </section>
+
+  <section id="section-2" class="page two">
+    
+    <div class="container">
+      <h2 class="header" style="padding-top: 100px;">skills</h2>
+      <p>Bacon ipsum dolor sit amet sausage tail capicola ground round hamburger ham hock. Short ribs pig andouille meatball, pastrami tri-tip fatback ham hock shank kielbasa swine. Rump pancetta jerky kielbasa doner beef ribs tongue hamburger strip steak drumstick andouille shoulder shank flank.</p>
+      <ul class="nav nav-stacked col-md-4 col-lg-4 col-sm-6 col-xs-6" ng-repeat="thing in $ctrl.awesomeThings | filter : {type: 'skill'}">
+          <li><span class="skillHeader" style="border: 3px solid #777; background:#f8f8f8;">{{thing.name}}</span>
+            <div class="progress progress-striped">
+                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="{{thing.info}}" aria-valuemin="0" aria-valuemax="100" style="width: {{thing.info}}%">
+                  <span class="sr-only">{{thing.info}}% Complete</span>
+                </div>
+            </div>
+          </li>
+      </ul>
+    </div>
+  </section>
+  <span>&nbsp;</span>
+  <section id="section-3" class="page three">
+    <h2 class="header" style="padding-top: 100px;">works</br><small></small></h2>
+    <div class="container">
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <img src="assets/images/yeoman.png" alt="I'm Yeoman">
+          <div class="caption">
+            <h3>Thumbnail label</h3>
+            <p>Shoulder cow tenderloin chuck, pork chop jerky doner leberkas. Chuck sausage hamburger, kevin beef pork chop pork shoulder ground round ball tip turducken flank. Bresaola tri-tip meatloaf, salami venison tail pig shank shankle jowl sausage brisket cow biltong turducken. Swine turducken hamburger ball tip short loin prosciutto kevin jowl tri-tip. Doner meatloaf pork brisket.</p>
+            <p><md-button>more</md-button><md-button>link</md-button></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <img src="assets/images/yeoman.png" alt="I'm Yeoman">
+          <div class="caption">
+            <h3>Thumbnail label</h3>
+            <p>Shoulder cow tenderloin chuck, pork chop jerky doner leberkas. Chuck sausage hamburger, kevin beef pork chop pork shoulder ground round ball tip turducken flank. Bresaola tri-tip meatloaf, salami venison tail pig shank shankle jowl sausage brisket cow biltong turducken. Swine turducken hamburger ball tip short loin prosciutto kevin jowl tri-tip. Doner meatloaf pork brisket.</p>
+            <p><md-button>more</md-button><md-button>link</md-button></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <img src="assets/images/yeoman.png" alt="I'm Yeoman">
+          <div class="caption">
+            <h3>Thumbnail label</h3>
+            <p>Shoulder cow tenderloin chuck, pork chop jerky doner leberkas. Chuck sausage hamburger, kevin beef pork chop pork shoulder ground round ball tip turducken flank. Bresaola tri-tip meatloaf, salami venison tail pig shank shankle jowl sausage brisket cow biltong turducken. Swine turducken hamburger ball tip short loin prosciutto kevin jowl tri-tip. Doner meatloaf pork brisket.</p>
+            <p><md-button>more</md-button><md-button>link</md-button></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="section-4" class="page four">
+
+  <canvas id="canvas2" resize ></canvas>
+ <div class="innerFour container"> 
+      <h2  class="header" style="padding-top: 100px;">contact</br><small>Send me mail, phone me or leave me message here. I'll call or write you back soon.</small></h2>
+  <md-content layout-padding="" class="msgForm container">
+    <div>
+      <form name="msgForm">
+
+        <div layout-gt-sm="row">
+          <md-input-container class="md-block" flex-gt-sm="">
+            <label >contact (could be email or whatever)</label>
+            <input required md-no-asterisk  ng-model="$ctrl.msg.contact"name="contact" >
+            <div ng-messages="msgForm.contact.$error">
+
+            </div>
+          </md-input-container>
+
+          <md-input-container required class="md-block" flex-gt-sm="">
+            <label>name</label>
+            <input required md-no-asterisk  ng-model="$ctrl.msg.name" name="name" >
+            <div ng-messages="msgForm.name.$error">
+
+            </div>
+          </md-input-container>
+        </div>
+
+
+
+        <md-input-container required class="md-block">
+          <label>message</label>
+          <textarea ng-model="$ctrl.msg.message" name="message" required md-maxlength="1000" rows="5" md-select-on-focus="" overflow="auto"></textarea>
+          <div ng-messages="msgForm.message.$error">
+
+            </div>
+        </md-input-container>
+
+
+        <div class="alert alert-success fade animate-show" template-url="alertThanks.html" style="background-color:#777;color:white; float: left;width:auto;transition: all 1s;" ng-show="$ctrl.showThanks">
+         Thanks for a message!&nbsp;&nbsp;&nbsp;<a href="#" class="close" data-dismiss="alert" aria-label="close" ng-click="$ctrl.showThanks=false;">&times;</a></div>
+         <div class="alert alert-success fade animate-show" template-url="alertThanks.html" style="background-color:#777;color:white; float: left;width:auto;transition: all 1s;" ng-show="$ctrl.showAlert">
+         Every field is required!&nbsp;&nbsp;&nbsp;<a href="#" class="close" data-dismiss="alert" aria-label="close" ng-click="$ctrl.showAlert=false;">&times;</a></div>
+
+        <md-button class="md-fab md-primary" style="float: right" ng-click="$ctrl.addThing()"><md-icon><i class="material-icons">send</i></md-icon></md-button>
+
+      </form>
+    </div>
+  </md-content>
+</br></br>
+
+     
+   </div>
+   
+    
+
+  </section>
+ 
+    <md-content layout-padding="" 
+      class="jumbotron" 
+      style="margin-bottom: 0;
+             margin-right: 25vw;
+             overflow-x:hidden;">
+    <h4 style="float: left;color: #777;"><i class="material-icons">email</i><span>&nbsp;grzegorz@zwolinski.gf</span></br><span style="">&nbsp;+48&nbsp;690&nbsp;200&nbsp;102</span><i class="material-icons" style="float: left;">phone</i></h4><br>
+    
+    </md-content>
+
+    <script type="text/ng-template" id="alertThanks.html">
+      <div ng-transclude></div>
+    </script>
